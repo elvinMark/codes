@@ -60,7 +60,6 @@ while flag:
         if event.type == pygame.MOUSEBUTTONUP:
             if b1.rect.collidepoint(pygame.mouse.get_pos()):
                 b1.move_with_mouse = True
-              
     b1.move()
     screen.blit(bg.image,bg.rect)
     screen.blit(b1.image,b1.rect)
