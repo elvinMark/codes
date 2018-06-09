@@ -10,6 +10,10 @@ flag = True
 screen_size = (HEIGHT,WIDTH)
 N = 6 #Number of available blocks
 D = 50
+rows = 10
+cols = 10
+game_map = [cols*[0] for i in range(rows)]
+
 #Classes
 
 class Background(pygame.sprite.Sprite):
