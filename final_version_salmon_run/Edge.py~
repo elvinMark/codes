@@ -1,0 +1,4 @@
+import pygame
+
+class Edge(pygame.sprite.Sprite):
+    

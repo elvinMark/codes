@@ -1,0 +1,18 @@
+M means ESC
+C means CTRL
+
+Copy M-w
+Cut C-w
+Paste C-y
+Undo C-x u
+
+To start selecting text C-SPACE_BAR
+To open an existing/new file C-x C-f
+To save C-x C-s
+To change buffer C-x b
+To kill a buffer C-x k
+To erase a line C-k
+To search C-s
+To start a the shell M-x shell
+To split the window C-x 2 or C-x 3
+To close emacs C-x C-c

@@ -1,0 +1,3 @@
+import pygame
+
+class End(pygame.sprite.Sprite)
