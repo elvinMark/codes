@@ -15,12 +15,12 @@ class Map:
         count_blocks = 0
         count_obstacles = 0
         arr = Arrow(ARROW_DIR)
-        start = Start(START_DIR)
-        end = End(END_DIR)
+        start = Block(START_DIR,type_block=TYPE_5)
+        end = Block(END_DIR,type_block=TYPE_5)
         for i in range(DIM):
             for j in range(DIM):
                 if self.map_data[i][j] > 0 and self.map_data[i][j]<100:
-                    list_blocks.append(Block(BLOCKS_DIR[self.map_data[i][j] - 1]))
+                    list_blocks.append(Block(BLOCKS_DIR[self.map_data[i][j]-1],type_block=self.map_data[i][j]-1))
                     count_blocks += 1
                     self.map_data[i][j] = count_blocks
                 elif self.map_data[i][j] < 0:
@@ -51,3 +51,6 @@ class Map:
             self.map_data[i][col] = self.map_data[i - 2*opt + 1][col]
         self.map_data[opt*(5 - DIM) + DIM-3][col] = extra
         self.map_data[EXTRA_POS[0]][EXTRA_POS[1]] = aux
+    def print_map(self):
+        for i in self.map_data:
+            print i

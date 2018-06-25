@@ -56,6 +56,8 @@ def game_loop(game_map):
     set_pos(start,start.map_pos)
     set_pos(end,end.map_pos)
     fish = Fish(FISH_DIR,(start.rect.centerx,start.rect.centery))
+    flag_fish_move = False
+    count = 0
     while game_flag:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -63,7 +65,12 @@ def game_loop(game_map):
                 break
             if event.type == pygame.KEYDOWN:
                 do_key_action(gmap,arr,event)
-        fish.move(gmap,lb,lo)
+        if fish.check_status(gmap,lb,lo):    
+            fish.move(flag_fish_move)
+        if not flag_fish_move and count > START_TIME:
+            flag_fish_move = not flag_fish_move
+        if not flag_fish_move:
+            count += 1
         screen.blit(bg.image,bg.rect)
         screen.blit(start.image,start.rect)
         screen.blit(end.image,end.rect)
